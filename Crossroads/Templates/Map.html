@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+
+    <style>
+        .moving {
+            border: 4px solid yellow;
+        }
+    </style>
+
+    <div ng-controller="CharacterController as vm">
+        <div ng-repeat="character in vm.characters">{{character.Name}}</div>
+        <div class="droppable" style="width:100px; height:100px; background-color:blue"></div>
+    </div>
+
+
+    <div class="drop-zone" style="height:500px; width:500px; background-color:darkslategrey">
+
+    </div>
+
+
+
+
+    <script src="Scripts/jquery-2.1.4.js"></script>
+    <script src="Scripts/jquery-ui-1.11.4.js"></script>
+    <script>
+
+        $(".droppable").on("drop"),
+        function (e) {
+            //Save the pin position on the droppable area.
+
+        }
+
+        //The basic drag/drop mechanic is here.
+
+        $(".drop-zone").droppable({
+            accept: ".droppable",
+            activeClass: "moving",
+            hoverClass: "drop-hover"
+            //What happens to pins that overlap? What determines overlap order?
+
+        });
+
+        $(".droppable").draggable({
+            opacity: 0.3,
+            revert: "invalid"
+        });
+
+        ////getter
+        //var accept = $(".drop-zone").droppable("option", "accept");
+        ////setter
+        //$(".drop-zone").droppable("option", "accept", ".droppable")
+
+        ////Sets the value of droppable option associated with the specific optionName
+        //var item = {}
+        //$("droppable").droppable("option", "disabled", true);
+
+        //On drop event, call controller action and save button position for that page.
+
+    </script>
+
+</body>
+</html>
